@@ -111,10 +111,10 @@ docker compose up -d
 docker compose down -v
 
 # Cria a imagem Docker da aplicação
-docker build . -t helderprado/servidor-python:1.0
+docker build . -t limafabricia/servidor-python:1.0
 
 # Envia a imagem para o Docker Hub
-docker push helderprado/servidor-python:1.0
+docker push limafabricia/servidor-python:1.0
 
 # Volta ao diretório do Pod
 cd ..
@@ -174,16 +174,16 @@ kubectl get pods
 
 # Atualiza a aplicação para a versão 2.0
 cd aplicacao-atualizada
-docker build . -t helderprado/servidor-python:2.0
+docker build . -t limafabricia/servidor-python:2.0
 
 # Roda o container localmente para verificar a nova imagem
-docker run --rm -p 8000:8000 --env-file .env helderprado/servidor-python:2.0
+docker run --rm -p 8000:8000 --env-file .env limafabricia/servidor-python:2.0
 
 # Encerra o container
 ctrl+c
 
 # Envia a nova imagem para o Docker Hub
-docker push helderprado/servidor-python:2.0
+docker push limafabricia/servidor-python:2.0
 
 # Volta ao diretório do ReplicaSet
 cd ..
@@ -372,13 +372,13 @@ cd 7.criar-hpa
 cd teste-de-carga-app
 
 # Cria a imagem Docker do teste de carga
-docker build . -t helderprado/teste-carga:1.0
+docker build . -t limafabricia/teste-carga:1.0
 
 # (Opcional) Testa a imagem localmente, se desejar
-docker run --rm -p 8089:8089 helderprado/teste-carga:1.0
+docker run --rm -p 8089:8089 limafabricia/teste-carga:1.0
 
 # Envia a imagem para o Docker Hub
-docker push helderprado/teste-carga:1.0
+docker push limafabricia/teste-carga:1.0
 
 # Volta ao diretório raiz do HPA
 cd ..
